@@ -1,32 +1,12 @@
 from dash import Dash, dcc, html, Input, Output
 from decimal import Decimal
 import pandas as pd
-import requests
-from bs4 import BeautifulSoup as bs
 
 
-df = pd.read_csv(r'D:\Normdist3.csv', delimiter = ';', encoding= 'utf-8-sig')
+
+df = pd.read_csv(r'Normdist3.csv', delimiter = ';', encoding= 'utf-8-sig')
 
 df = pd.DataFrame(df)
-
-
-def dona(x):
-    v = []
-    for i in x:
-        m = list(map(lambda x: str(Decimal(x) + Decimal(0.5000) if len(x) != 3 else str(x)), i))
-        v.append(m)
-    return v
-
-
-z = []
-for i in a[1:]:
-    z.append((i.text.strip()).split('\n'))
-
-kaka = dona(z)
-for i in kaka:
-    df.loc[len(df.index)] = i
-
-df.set_index('number', inplace=True)
 
 
 def fact(x):
