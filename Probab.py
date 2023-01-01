@@ -5,14 +5,9 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 
-url = 'http://dmo.econ.msu.ru/teaching/ru/stat/Normal.htm'
-data = requests.get(url).text
+df = pd.read_csv(r'D:\Normdist3.csv', delimiter = ';', encoding= 'utf-8-sig')
 
-soup = bs(data, 'html.parser')
-
-a = soup.find('tbody').find_all('tr')
-
-df = pd.DataFrame(columns=['number', '0.00', '0.01', '0.02', '0.03', '0.04', '0.05', '0.06', '0.07', '0.08', '0.09'])
+df = pd.DataFrame(df)
 
 
 def dona(x):
