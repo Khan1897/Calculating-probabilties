@@ -8,6 +8,10 @@ df = pd.read_csv(r'Normdist3.csv', delimiter = ';', encoding= 'utf-8-sig')
 
 df = pd.DataFrame(df)
 
+df = df.astype(str)
+
+df = df.set_index('number')
+
 
 def fact(x):
     number = Decimal(1)
