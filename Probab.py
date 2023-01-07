@@ -167,7 +167,7 @@ def count_exp_dist(upper, lower, param):
     upD = Decimal(upper)
     loD = Decimal(lower)
     parD = Decimal(param)
-    final = (-1 * parD * upD).exp() - (-1 * parD * loD).exp()
+    final = (1 - (-1 * parD * upD).exp()) - (1 - (-1 * parD * loD).exp())
     return f'Your value: {str(final.quantize(Decimal(1.0000)))}'
 
 
